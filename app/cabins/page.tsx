@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "Cabins",
+};
+
 const CabinsPage = () => {
   return (
     <div>
