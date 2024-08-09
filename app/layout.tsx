@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${josefin.className} bg-primary-950 text-primary-100 min-h-screen flex flex-col`}
+        className={`${josefin.className} bg-primary-950 text-primary-100 min-h-screen flex flex-col relative`}
       >
         <Header />
 
