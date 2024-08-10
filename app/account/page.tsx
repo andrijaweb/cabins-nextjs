@@ -3,7 +3,11 @@ export const metadata = {
 };
 
 const AccountPage = () => {
-  return <h1>This is account page</h1>;
+  return (
+    <h2 className="font-semibold text-2xl text-accent-400 mb-7">
+      Welcome, Andrija
+    </h2>
+  );
 };
 
 export default AccountPage;

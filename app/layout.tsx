@@ -12,7 +12,6 @@ import "@/app/_styles/globals.css";
 import Header from "./_components/Header";
 
 export const metadata = {
-  // title: "The Wild Oasis",
   title: {
     template: "%s / The Wild Oasis",
     default: "Welcome / The Wild Oasis",
@@ -33,8 +32,8 @@ export default function RootLayout({
       >
         <Header />
 
-        <div className="flex-1 px-8 py-12">
-          <main className="max-w-7xl mx-auto">{children}</main>
+        <div className="flex-1 px-8 py-12 grid">
+          <main className="max-w-7xl mx-auto w-full">{children}</main>
         </div>
       </body>
     </html>
