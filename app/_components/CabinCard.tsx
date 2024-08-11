@@ -2,19 +2,21 @@ import { UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 
-const CabinCard = ({ cabin }: { cabin: Cabin }) => {
+const CabinCard = ({ cabin }: CabinsType) => {
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
 
   return (
     <div className="flex border-primary-800 border">
-      <div className="flex-1 relative">
-        <Image
-          src={image}
-          fill
-          alt={`Cabin ${name}`}
-          className="object-cover border-r border-primary-800"
-        />
-      </div>
+      {image && (
+        <div className="flex-1 relative">
+          <Image
+            src={image}
+            fill
+            alt={`Cabin ${name}`}
+            className="object-cover border-r border-primary-800"
+          />
+        </div>
+      )}
 
       <div className="flex-grow">
         <div className="pt-5 pb-4 px-7 bg-primary-950">
@@ -30,7 +32,7 @@ const CabinCard = ({ cabin }: { cabin: Cabin }) => {
           </div>
 
           <p className="flex gap-3 justify-end items-baseline">
-            {discount > 0 ? (
+            {discount && regularPrice && discount > 0 ? (
               <>
                 <span className="text-3xl font-[350]">
                   ${regularPrice - discount}
