@@ -1,14 +1,11 @@
 import { eachDayOfInterval } from "date-fns";
 import { supabase } from "./supabase";
-import type { Database } from "./database.types";
 import { notFound } from "next/navigation";
 
 /////////////
 // GET
 
-export async function getCabin(
-  id: string
-): Promise<Database["public"]["Tables"]["cabins"]["Row"] | null> {
+export async function getCabin(id: string) {
   const { data, error } = await supabase
     .from("cabins")
     .select("*")
@@ -99,6 +96,7 @@ export async function getBookings(guestId: string) {
   return data;
 }
 
+/*
 export async function getBookedDatesByCabinId(cabinId: string) {
   let today = new Date();
   today.setUTCHours(0, 0, 0, 0);
@@ -128,6 +126,7 @@ export async function getBookedDatesByCabinId(cabinId: string) {
 
   return bookedDates;
 }
+*/
 
 export async function getSettings() {
   const { data, error } = await supabase.from("settings").select("*").single();
@@ -155,6 +154,7 @@ export async function getCountries() {
 /////////////
 // CREATE
 
+/*
 export async function createGuest(newGuest) {
   const { data, error } = await supabase.from("guests").insert([newGuest]);
 
@@ -181,11 +181,12 @@ export async function createBooking(newBooking) {
 
   return data;
 }
-
+*/
 /////////////
 // UPDATE
 
 // The updatedFields is an object which should ONLY contain the updated data
+/*
 export async function updateGuest(id, updatedFields) {
   const { data, error } = await supabase
     .from("guests")
@@ -215,7 +216,7 @@ export async function updateBooking(id, updatedFields) {
   }
   return data;
 }
-
+*/
 /////////////
 // DELETE
 

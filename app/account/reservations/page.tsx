@@ -6,7 +6,7 @@ export const metadata = {
 
 const ReservationsPage = () => {
   // CHANGE
-  const bookings = [];
+  const bookings: any = [];
 
   return (
     <div>
@@ -23,7 +23,7 @@ const ReservationsPage = () => {
         </p>
       ) : (
         <ul className="space-y-6">
-          {bookings.map((booking) => (
+          {bookings.map((booking: any) => (
             <ReservationCard booking={booking} key={booking.id} />
           ))}
         </ul>
