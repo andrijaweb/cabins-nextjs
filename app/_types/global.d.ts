@@ -5,6 +5,7 @@ declare global {
 
   type Cabin = DB["public"]["Tables"]["cabins"]["Row"];
   type Booking = DB["public"]["Tables"]["bookings"]["Row"];
+  type Settings = DB["public"]["Tables"]["settings"]["Row"];
 
   interface CabinsType {
     cabin: {
