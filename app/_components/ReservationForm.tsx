@@ -1,4 +1,10 @@
+"use client";
+
+import { useReservation } from "./ReservationContext";
+
 const ReservationForm = ({ cabin }: { cabin: Cabin }) => {
+  const { range } = useReservation();
+
   // CHANGE
   const { maxCapacity } = cabin;
 
@@ -18,6 +24,10 @@ const ReservationForm = ({ cabin }: { cabin: Cabin }) => {
             <p>{user.name}</p>
           </div> */}
       </div>
+
+      <p>
+        {range?.from?.toString()} to {range?.to?.toString()}
+      </p>
 
       <form className="bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col">
         <div className="space-y-2">
