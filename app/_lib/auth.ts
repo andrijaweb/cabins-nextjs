@@ -57,9 +57,19 @@ const authConfig = {
         return false;
       }
     },
-    async session({ session, user }: { session: any; user: any }) {
-      const guest = await getGuest(session.user.email);
-      session.user.guestId = guest?.id;
+    async session({
+      session,
+      user,
+    }: {
+      session: Session;
+      user: Session["user"];
+    }) {
+      const guest = await getGuest(session.user?.email || "");
+
+      if (session.user && guest) {
+        session.user.guestId = guest.id;
+      }
+
       return session;
     },
   },

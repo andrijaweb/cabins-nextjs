@@ -4,7 +4,7 @@ import { FC } from "react";
 // Let's imagine your colleague already built this component 😃
 
 interface SelectCountryProps {
-  defaultCountry: string;
+  defaultCountry: string | null | undefined;
   name: string;
   id: string;
   className: string;
