@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { auth, signIn, signOut } from "./auth";
 import { supabase } from "./supabase";
 
@@ -25,6 +26,8 @@ export const updateGuest = async (formData: any) => {
     .eq("id", guestId);
 
   if (error) throw new Error("Guest could not be updated");
+
+  revalidatePath("/account/profile");
 };
 
 export const signInAction = async () => {
